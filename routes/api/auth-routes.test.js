@@ -19,17 +19,17 @@ describe("test /api/auth/register route", () => {
 
   test("test register route with correct data", async () => {
     const registerData = {
-      name: "Testtest",
-      email: "testtest@gmail.com",
-      password: "test123test",
+      name: "Tegsstest",
+      email: "te525251st@gm23l.com",
+      password: "tegssssstest",
     };
 
     const res = await request(app)
       .post("/api/auth/register")
       .send(registerData);
 
+    expect(res.body.email).toBe(registerData.email);
     expect(res.statusCode).toBe(201);
     expect(res.body.name).toBe(registerData.name);
-    expect(res.body.email).toBe(registerData.email);
   });
 });
